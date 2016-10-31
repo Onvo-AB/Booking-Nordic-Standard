@@ -1,0 +1,21 @@
+#!/bin/bash
+
+clear
+echo "Cleaning up..."
+rm *.o
+
+gcc -g -c -Wall -Wfatal-errors main.c
+
+echo "Removing old application..."
+rm appHash
+
+echo "Linking..."
+gcc -Wall -o clientHash *.o -lm
+
+echo "Setting chmod..."
+chmod +x clientHash
+
+echo "Cleaning up..."
+rm *.o
+
+echo "All done!"
