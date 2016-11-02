@@ -59,10 +59,10 @@ int main()
 	memset(hash, 0, sizeof(hash));
 	hmac_sha1(key, sizeof(key), (const uint8_t*)message, strlen(message), hash, sizeof(hash));
 
-	char clientHash[64];
-	char* clientHashPtr = clientHash;
+	char clientToken[64];
+	char* ptr = clientToken;
 	for(int i = 0; i < SHA1_DIGEST_LENGTH; i++)
-		clientHashPtr += sprintf(clientHashPtr, "%02x", hash[i]);
+		ptr += sprintf(ptr, "%02x", hash[i]);
 
 
 	printf("systemTime: \"%lu\"\r\n", systemTime);
@@ -70,7 +70,7 @@ int main()
 	printf("method: \"%s\"\r\n", method);
 	printf("clientKey: \"%s\"\r\n", clientKey);
 	printf("message: \"%s\"\r\n", message);
-	printf("clientHash: \"%s\"\r\n", clientHash);
+	printf("clientToken: \"%s\"\r\n", clientToken);
 
 
 

@@ -7,13 +7,13 @@ rm *.o
 gcc -g -c -Wall -Wfatal-errors main.c
 
 echo "Removing old application..."
-rm appHash
+rm clientToken
 
 echo "Linking..."
-gcc -Wall -o clientHash *.o -lm
+gcc -Wall -o clientToken *.o -lm
 
 echo "Setting chmod..."
-chmod +x clientHash
+chmod +x clientToken
 
 echo "Cleaning up..."
 rm *.o
